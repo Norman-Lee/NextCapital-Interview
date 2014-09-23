@@ -1,7 +1,63 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-	</head>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="side-menu.css">
+	<link rel="stylesheet" href="todo.css">
+	<script src='client/js/jquery-1.11.1.min.js'> </script>
+	<script src='client/js/todo.client.js'></script>
+</head>
+
+<body>
+	<div id="layout">
+		<div id="menu">
+			<div class="pure-menu pure-menu-open">
+				<a class="pure-menu-heading" href="#"> NextCapital</a>
+				<ul>
+					<li><a>SIGN UP</a></li>
+					<li class="menu-item-divided "><a>LOG IN</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div id="main">
+			<div class="header">
+				<h1>TODO LIST NAME</h1>
+				<h2>Todo list description</h2>
+			</div>
+			<div class="pure-menu pure-menu-open">
+				<ul>
+					<li class="todo-element">TODO 1 
+					<button class="pure-button todo-button">DELETE</button>
+					<button class="pure-button todo-button">EDIT</button>
+
+					</li>
+					
+					<li class="todo-element">TODO 2
+					<button class="pure-button todo-button">DELETE</button>
+					<button class="pure-button todo-button">EDIT</button>
+	
+					</li>
+
+					<li class="todo-element">TODO 3
+					<button class="pure-button todo-button">DELETE</button>
+					<button class="pure-button todo-button">EDIT</button>
+	
+					</li>
+
+					<li class="add-element">
+										
+					</li>
+				</ul>
+
+			</div>
+
+			<button class="pure-button pure-button-primary"> <strong>Add Todo</strong> </button>
+
+		</div>
+	</div>
+</body>
+
 </html>
