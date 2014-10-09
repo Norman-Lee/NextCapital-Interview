@@ -1,3 +1,0 @@
-[submodule "client"]
-	path = client
-	url = git://github.com/clarkr/nextcapital-todo-api-client-jquery.git
