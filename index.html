@@ -5,56 +5,48 @@
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 	<link rel="stylesheet" href="side-menu.css">
 	<link rel="stylesheet" href="todo.css">
-	<script src='client/js/jquery-1.11.1.min.js'> </script>
+	<script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+	<script src='https://code.jquery.com/ui/1.11.1/jquery-ui.min.js'></script>
 	<script src='client/js/todo.client.js'></script>
+	<script src="todo.js"></script>
+
 </head>
 
 <body>
 	<div id="layout">
 		<div id="menu">
-			<div class="pure-menu pure-menu-open">
-				<a class="pure-menu-heading" href="#"> NextCapital</a>
-				<ul>
-					<li><a>SIGN UP</a></li>
-					<li class="menu-item-divided "><a>LOG IN</a></li>
-				</ul>
+			<div class="pure-menu pure-menu-open" id="test">
+				<a class="pure-menu-heading" >NextCapital</a>
+				
 			</div>
 		</div>
 
-
 		<div id="main">
 			<div class="header">
-				<h1>TODO LIST NAME</h1>
-				<h2>Todo list description</h2>
+				<h1 id="title">Welcome!</h1>
+				<h2 id="desc">Next Capital Todo</h2>
 			</div>
-			<div class="pure-menu pure-menu-open">
-				<ul>
-					<li class="todo-element">TODO 1 
-					<button class="pure-button todo-button">DELETE</button>
-					<button class="pure-button todo-button">EDIT</button>
-
-					</li>
+			
+			<div class="center-buttons">
+				<fieldset>
+				<center id="form-container">
+					<form class="pure-form pure-form-aligned" id="login-form">
 					
-					<li class="todo-element">TODO 2
-					<button class="pure-button todo-button">DELETE</button>
-					<button class="pure-button todo-button">EDIT</button>
-	
-					</li>
-
-					<li class="todo-element">TODO 3
-					<button class="pure-button todo-button">DELETE</button>
-					<button class="pure-button todo-button">EDIT</button>
-	
-					</li>
-
-					<li class="add-element">
-										
-					</li>
-				</ul>
-
+					<div class="pure-control-group">
+						<input id="email" type="email" placeholder="Email">
+					</div>
+					
+					<div class="pure-control-group">
+						<input id="password" type="password" placeholder="Password">
+					</div>	
+					<button type="button" id="signup" class="pure-button pure-button-primary">Sign Up</button>
+					<button type="button" id="login" class="pure-button pure-button-primary">Log In</button>
+					</form>
+				</center>
+				</fieldset>
 			</div>
 
-			<button class="pure-button pure-button-primary"> <strong>Add Todo</strong> </button>
+			
 
 		</div>
 	</div>
