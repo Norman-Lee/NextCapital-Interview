@@ -1,3 +1,14 @@
+/*
+ * addElement
+ * DESCRIPTION: Adds a checkbox form element with the checkbox either checked or unchecked
+ * depending on completion status of the task
+ *
+ * INPUT: e - shorthand for the todo to be transformed into a form element
+ *
+ * OUTPUT: None
+ *
+ * SIDE EFFECTS: Appends html markup to display the todo.
+*/
 function addElement(e){
 	$('#form-container #todo').append('<label class="pure-checkbox ui-state-default">'+
 		'<input type="checkbox"' + 'id="change" value="'+ e.id +'"' + setCheckedStatus(e.is_complete) + '>'+
@@ -6,6 +17,15 @@ function addElement(e){
 	);
 }
 
+/*
+ * setCheckedStatus
+ * DESCRIPTION: Checks the status of a todo element, if completed adds the checked attribute
+ * to the checkbox form
+ *
+ * INPUT: is_complete - completion status for the todo
+ *
+ * OUTPUT: An empty string or the checked attribute
+ */
 function setCheckedStatus(is_complete){
 	if(is_complete)
 		return 'checked';
@@ -13,9 +33,29 @@ function setCheckedStatus(is_complete){
 		return '';
 }
 
+/*
+ * resetDisplay
+ * DESCRIPTION: Reloads the page
+ *
+ * INPUT: None
+ * OUTPUT: None
+ *
+ * SIDE EFFECTS: Reloads the page
+ */
+
 function resetDisplay(){
 	location.reload();
 }
+
+/*
+ * displayProfile
+ *
+ * DESCRIPTION: Dynamically changes the main page to display the relevant todos based on user log in
+ * INPUT: user - object with all the user related info
+ * OUTPUT: None
+ * SIDE EFFECTS: Changes the main page to display todos
+ *
+ */
 
 function displayProfile(user){
 	$("#title").text(user.email);
@@ -52,19 +92,23 @@ function displayProfile(user){
 	});
 }
 
-//Completed sign up in conjunction with the API 
+
+//Functionality for buttons that interface with the API to sign in, log in, add todo, logout, and finish todos
+
+
+//SIGN UP
 $(document).ready(function(){
 	$("#signup").click(function(){
 		Todo.createUser({
 			email: $("#email").val(),
 			password: $('#password').val(),
-			success: function(user) { alert('Success'); },
+			success: function(user) { alert('You signed up successfully'); },
 			error: function(xhr) { alert('Error'); }
 		});	
 	});
 });
 
-
+//LOG IN
 $(document).ready(function(){
 	$('#login').click(function(){
 		Todo.startSession({
@@ -78,6 +122,7 @@ $(document).ready(function(){
 	});
 });
 
+//ADD TODO
 $(document).ready(function(){
 	$('#main').on('click', '#add', function(){
 		Todo.createTodo({
@@ -90,13 +135,14 @@ $(document).ready(function(){
 	});
 });
 
+//LOGOUT
 $(document).ready(function(){
 	$('#main').on('click', '#change', function(){
 			var isComplete =  $(this).is(':checked');
 			Todo.updateTodo({
 				todoId: $(this).attr('value'),
 				data: {is_complete: isComplete},
-				success: function(todo){ alert(todo.is_complete)},
+				success: function(todo){},
 				error: function(xhr){ alert('todo update error!')}
 		});
 	});
